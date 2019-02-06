@@ -18,6 +18,9 @@ class ApartmentTest < Minitest::Test
   end
 
   def test_apartment_has_attributes
-    assert_equal
+    assert_equal "A1", @a1.number
+    assert_equal 1200, @a1.monthly_rent
+    assert_equal 1, @a1.bathrooms
+    assert_equal 1, @a1.bedrooms
   end
 end
