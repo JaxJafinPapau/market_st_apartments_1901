@@ -19,4 +19,11 @@ class Building
     end
     total.sum.to_f / @units.count
   end
+
+  def renter_with_highest_rent
+    highest = @units.max do |unit|
+      unit.monthly_rent <=> unit.monthly_rent
+    end
+    highest.renter
+  end
 end
