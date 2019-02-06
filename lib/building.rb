@@ -26,4 +26,12 @@ class Building
     end
     highest.renter
   end
+
+  def annual_breakdown
+    annual_revenues = {}
+    @units.each do |unit|
+      annual_revenues.store(unit.renter.name, unit.monthly_rent * 12)
+    end
+    annual_revenues
+  end
 end

@@ -48,4 +48,11 @@ class BuildingTest < Minitest::Test
     @building.add_unit(@b2)
     assert_equal @jessie, @building.renter_with_highest_rent
   end
+
+  def test_annual_breakdown
+    @building.add_unit(@a1)
+    @building.add_unit(@b2)
+    annual_revenues = {"Jessie" => 14400, "Spencer" => 11988}
+    assert_equal annual_revenues, @building.annual_breakdown
+  end
 end
